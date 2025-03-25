@@ -54,11 +54,11 @@ def create_animation(token_states, merge_rules):
         prev_tokens = " ".join(token_states[frame])
         new_tokens = " ".join(token_states[frame + 1]) if frame + 1 < len(token_states) else ""
 
-        # AI: Split the previous and updated tokens into separate lines
+        # Split the previous and updated tokens into separate lines
         prev_tokens_split = "\n".join(token_states[frame])
         new_tokens_split = "\n".join(token_states[frame + 1]) if frame + 1 < len(token_states) else ""
 
-        # AI: Bold the merged pair in the updated tokens
+        # Bold the merged pair in the updated tokens
         merged_pair = merge_rules[frame] if frame < len(merge_rules) else None
         bold_prev_tokens = []
         bold_new_tokens = []
@@ -140,7 +140,7 @@ if __name__ == "__main__":
     # Initialize character-level tokens (space-separated characters)
     tokens = [" ".join(word) + " </w>" for word in words]
 
-    
+
     # Training loop: Merge the top N frequent pairs
     num_merges = 10  # Limit merges for testing
     merge_rules = []
